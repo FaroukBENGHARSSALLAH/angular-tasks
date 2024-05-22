@@ -1,0 +1,28 @@
+<div class="p-3">
+  <div class="card">
+    <div class="card-header">
+	   Tasks
+	</div>
+	<div class="card-body" > 
+	   <table class="table table-responsive" *ngIf='!errorMessage' >
+	     <thead>
+		    <tr>
+			  <th>title</th>
+			  <th>action</th>
+			</tr>
+		 </thead>
+		 <tbody>
+		    <tr *ngFor='let task of tasks' >
+			  <td> {{ task.title }}</td>
+			  <td>
+				<button (click)='handleSearchTask(task.id)' class="btn btn-outline-success">
+				   <i class="bi bi-search" ></i>
+				</button>
+			  </td>
+			</tr>
+		 </tbody>
+	   </table>
+	   <div *ngIf='errorMessage' > {{ errorMessage }} </div>
+	</div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div *ngIf="stateService.authenticationState.isAuthenticated" >
+   <app-home></app-home>
+</div>
+<div *ngIf="!stateService.authenticationState.isAuthenticated" >
+   <app-login></app-login>
+</div>
